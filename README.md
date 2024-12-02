@@ -4,7 +4,7 @@ This is a **Random Password Generator** app designed to create secure and strong
 
 ## 🌐 Live Link
 
-[View Live Project](https://your-live-link-here)
+[View Live Project](https://kabeer100xdev.github.io/Password-Generator-App/)
 
 ---
 
