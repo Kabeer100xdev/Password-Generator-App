@@ -1,12 +1,15 @@
+/* Universal reset and font setup */
 * {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Title style */
 .title {
   font-size: 65px;
-  text-shadow: 2px 2px 0px #4adf86;
-  font-family: "Dancing Script", cursive;
+  text-shadow: 2px 2px 0px #4adf86; /* Green shadow */
+  font-family: "Dancing Script", cursive; /* Custom cursive font */
   font-optical-sizing: auto;
   font-weight: bold;
   font-style: normal;
@@ -14,90 +17,150 @@
   margin-bottom: 0px;
 }
 
+/* Body layout */
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around; /* This pushes the content apart, pushing the footer to the bottom */
-  height: 100vh;
-  background: linear-gradient(rgb(0, 0, 0), rgb(36, 36, 36));
-}
-#container {
-  display: flex;
-  height: 400px;
-  width: 700px;
-  background-color: #1f2937;
-  padding: 60px;
-  border-radius: 9px;
-  box-shadow: 0px 0px 100px #36b667;
+  justify-content: space-around; /* Pushes content apart */
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(
+    rgb(0, 0, 0),
+    rgb(36, 36, 36)
+  ); /* Dark gradient background */
 }
 
+/* Main container */
+#container {
+  display: flex;
+  height: 480px;
+  width: 700px;
+  background-color: #1f2937; /* Dark background */
+  padding: 60px;
+  border-radius: 9px;
+  box-shadow: 0px 0px 100px #36b667; /* Green glow effect */
+}
+
+/* Slider bar styles */
+#slider-bar {
+  width: 206px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #273549;
+}
+
+/* Hero section */
 #hero-elements {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: start;
 }
+
+/* Main header style */
 h1 {
   font-size: 45px;
   color: #ffffff;
   margin-bottom: 10px;
 }
 
+/* Span text color */
 span {
-  color: #4adf86;
+  color: #4adf86; /* Light green */
 }
 
+/* Paragraph text style */
 p {
-  color: rgb(185, 185, 185);
+  color: rgb(185, 185, 185); /* Light gray */
   font-size: 23px;
   margin-bottom: 60px;
 }
 
+/* Button style */
 button {
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   border: none;
-  background-color: #10b981;
+  background-color: #10b981; /* Green button */
   font-size: 20px;
   color: white;
   border-radius: 7px;
-  margin-bottom: 50px;
+  margin-top: 50px;
   cursor: pointer;
-  transition: background-color 0.5;
-}
-button:hover {
-  background-color: #009966;
-}
-button:active {
-  background-color: #00734d;
+  transition: background-color 0.5s;
 }
 
+button:hover {
+  background-color: #009966; /* Darker green on hover */
+}
+
+button:active {
+  background-color: #00734d; /* Even darker on active */
+  transform: scale(0.95); /* Button shrinks slightly on click */
+}
+
+/* Password input windows styling */
 #password-windows {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-around;
-  border-left: 2px solid #2f3e53;
-
+  flex-direction: column;
+  padding-left: 15px;
   width: 350px;
-  height: 400px;
+  height: 250px;
 }
 
+/* Slider style */
+.slider {
+  border: 5px solid #2f3e53;
+  margin-bottom: 50px;
+  -webkit-appearance: none;
+  width: 235px;
+  height: 15px;
+  border-radius: 5px;
+  background: #30415a;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+/* Slider thumb style */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d; /* Green thumb */
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+/* Window styles for inputs */
 #window1,
-#window2 {
+#window2,
+#slider-bar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 45px;
   background-color: #273549;
   height: 40px;
-  width: 240px;
-  border-radius: 10px;
+  width: 270px;
   cursor: text;
   font-size: 17px;
-  color: #55f991;
+  color: #55f991; /* Light green text */
   border: 3px solid #2f3e53;
 }
+
+/* Footer style */
 footer {
   padding: 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -109,4 +172,141 @@ footer {
   padding-right: 20px;
   border-radius: 12px;
   border: 2px dotted #55f991;
+}
+
+/* Toggle button styles */
+.checkbox-wrapper-7 .tgl {
+  display: none;
+}
+
+.checkbox-wrapper-7 .tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-wrapper-7 .tgl-ios + .tgl-btn {
+  background: #fbfbfb;
+  border-radius: 2em;
+  padding: 2px;
+  transition: all 0.4s ease;
+  border: 1px solid #e8eae9;
+}
+
+/* Right section styles */
+#right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-left: 2px solid #2f3e53;
+  padding-left: 15px;
+}
+
+/* Button windows styling */
+#button-windows {
+  margin-top: 15px;
+  background-color: #273549;
+  border-radius: 10px;
+  border-bottom: 2px solid #2f3e53;
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+  height: 180px;
+}
+
+/* Text inside button windows */
+#button-windows-text {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+/* Copy and window button styles */
+.copy-and-window-btn {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Copy text button */
+#copy-text1 {
+  position: fixed;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #2f3e53;
+  width: 25px;
+  height: 25px;
+  border-radius: 0px 12px 12px 0px;
+}
+
+/* Toast box position and animation */
+#toastBox {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.toast {
+  color: white;
+  border-radius: 12px;
+  width: 400px;
+  height: 80px;
+  background-color: #2f3e53;
+  font-weight: 500;
+  margin: 15px 0;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  position: relative;
+  transform: translateX(100%);
+  animation: moveleft 0.5s linear forwards;
+}
+
+@keyframes moveleft {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.toast i {
+  margin: 0 20px;
+  font-size: 35px;
+  color: green;
+}
+
+.toast.error i {
+  color: red;
+}
+
+.toast::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: green;
+  animation: anim 5s linear forwards;
+}
+
+@keyframes anim {
+  100% {
+    width: 0;
+  }
+}
+
+.toast.error::after {
+  background: red;
 }

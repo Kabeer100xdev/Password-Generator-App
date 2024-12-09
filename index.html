@@ -1,38 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta information for proper rendering and responsiveness -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link to external stylesheets -->
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="slidebar.css" />
+
+    <!-- Google Fonts for custom typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Dancing+Script:wght@400..700&family=Orbitron:wght@400..900&family=Sixtyfour+Convergence&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+
+    <title>Random Password Generator</title>
   </head>
+
   <body>
+    <!-- Main Title of the app -->
     <h1 class="title">Random Password Generator</h1>
+
+    <!-- Container that wraps all content -->
     <div id="container">
+      <!-- Hero Section with introduction and action button -->
       <div id="hero-elements">
         <h1>
           Generate a <br />
           <span>random password</span>
         </h1>
         <p>Never use an insecure password again.</p>
-        <button onclick="randomPassword()">Generate Passwords</button>
+        <button id="PasswordGenerator">Generate Passwords</button>
       </div>
 
-      <div id="password-windows">
-        <p id="window1"></p>
-        <p id="window2"></p>
+      <!-- Right Section containing password and input elements -->
+      <div id="right-section">
+        <!-- Password Windows Section -->
+        <div id="password-windows">
+          <!-- First Password Window -->
+          <div class="copy-and-window-btn">
+            <p id="window1"></p>
+            <div class="tooltip-section">
+              <img id="copy-text1" src="image/pngwing.com.png" alt="" />
+            </div>
+          </div>
+
+          <!-- Range Input for password length -->
+          <div class="range">
+            <div class="field">
+              <input
+                id="sidebar-el"
+                type="range"
+                min="1"
+                max="20"
+                value="15"
+                steps="1"
+              />
+              <div id="number-viewer" class="value right">15</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button Windows Section for selecting password options -->
+        <div id="button-windows">
+          <!-- Checkbox for only Uppercase Letters -->
+          <div class="checkbox-wrapper-6">
+            <input class="tgl tgl-light" id="cb1-6" type="checkbox" />
+            <label class="tgl-btn" for="cb1-6"></label>
+            <p id="button-windows-text">Only Uppercase Letters (A to Z)</p>
+          </div>
+
+          <!-- Checkbox for only Lowercase Letters -->
+          <div class="checkbox-wrapper-6">
+            <input class="tgl tgl-light" id="cb1-7" type="checkbox" />
+            <label class="tgl-btn" for="cb1-7"></label>
+            <p id="button-windows-text">Only Lowercase Letters (a to z)</p>
+          </div>
+
+          <!-- Checkbox for only Numbers -->
+          <div class="checkbox-wrapper-6">
+            <input class="tgl tgl-light" id="cb1-8" type="checkbox" />
+            <label class="tgl-btn" for="cb1-8"></label>
+            <p id="button-windows-text">Only Numbers (1 to 9)</p>
+          </div>
+
+          <!-- Checkbox for only Symbols -->
+          <div class="checkbox-wrapper-6">
+            <input class="tgl tgl-light" id="cb1-9" type="checkbox" />
+            <label class="tgl-btn" for="cb1-9"></label>
+            <p id="button-windows-text">Only Symbols (~ to /)</p>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- Alert Message Section -->
+    <div id="toastBox"></div>
+
+    <!-- JavaScript for functionality -->
     <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/153ebfe76d.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 
+  <!-- Footer for the copyright notice -->
   <footer>
     &copy; 2024 Scrimba. Random Password Generator project by Matthew.
   </footer>
